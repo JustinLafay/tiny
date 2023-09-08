@@ -1,11 +1,14 @@
 <html>
-	<title>Main page</title>
+	<title>tiny-home</title>
 
 	<body>
-		Hello World !
+		<div>
+			Welcome to tiny, the tiny database of AOP
+		</div>
+		<div>
+			Select an AOP
+		</div>
 		<div v-scope="createButton({count: 3})"></div>
-		<div v-scope="createButton({color: 'red', count: 4})"></div>
-		<div v-scope="createButton({color: 'red', count: 4})"></div>
 	</body>
 </html>
 
@@ -16,7 +19,9 @@
 </template>
 
 <script type="module">
+	
 	import { createApp } from "https://unpkg.com/petite-vue?module"
+
 	function createButton(object){
 		return{
 			$template: "#incButton",
@@ -27,5 +32,7 @@
 			}
 		}
 	}
+	
 	createApp({createButton}).mount()
+
 </script>
