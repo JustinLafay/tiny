@@ -1,0 +1,31 @@
+<html>
+	<title>Main page</title>
+
+	<body>
+		Hello World !
+		<div v-scope="createButton({count: 3})"></div>
+		<div v-scope="createButton({color: 'red', count: 4})"></div>
+		<div v-scope="createButton({color: 'red', count: 4})"></div>
+	</body>
+</html>
+
+<template id="incButton">
+	{{count}}
+	<button @click="increment">increment</button>
+	<input v-model="color">{{color}}
+</template>
+
+<script type="module">
+	import { createApp } from "https://unpkg.com/petite-vue?module"
+	function createButton(object){
+		return{
+			$template: "#incButton",
+			count: object.count,
+			color: object.color,
+			increment(){
+				this.count++
+			}
+		}
+	}
+	createApp({createButton}).mount()
+</script>
