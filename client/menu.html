@@ -1,0 +1,32 @@
+<html>
+	<title>tiny-home</title>
+
+	<body>
+		<div>
+			Welcome to tiny, the tiny database of AOP
+		</div>
+		<div>
+			Select an AOP
+		</div>
+	</body>
+</html>
+
+<template id="cardAop">
+    <div>
+        
+    </div>
+</template>
+
+<script type="module">
+	import { createApp } from "https://unpkg.com/petite-vue?module"
+    function createCard(card){
+        return{
+            $template: "#cardAop",
+            image: null,
+            title: "",
+            description: ""
+        }
+    }
+	createApp({list}).mount()
+
+</script>
